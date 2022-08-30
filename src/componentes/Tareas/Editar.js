@@ -1,12 +1,23 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from "axios";
+import { Link } from 'react-router-dom';
 
-function Crear(){
+function Editar(){
   
-  const baseUrl = "http://localhost/sistema-tareas/";
+    const baseUrl = "http://localhost/sistema-tareas/";
   const [data, setData] = useState([]);
 
-  const [tareaSeleccionado, setTareaSeleccionado]=useState({
+  const peticionGet = async () => {
+    await axios.get(baseUrl).then((response) => {
+      setData(response.data);
+    });
+  };
+
+  useEffect(() => {
+    peticionGet();
+  }, []);
+
+  const [editarTareaSeleccionado, setEditarTareaSeleccionado]=useState({
     id_tar:'',
     nombre_tar:'',
     descripcion_tar:''
@@ -15,23 +26,32 @@ function Crear(){
 
   const handleChange=e=>{
     const {name, value} = e.target;
-    setTareaSeleccionado((prevState)=>({
+    setEditarTareaSeleccionado((prevState)=>({
       ...prevState,
       [name]: value
     }))
-    console.log(tareaSeleccionado);
+    console.log(editarTareaSeleccionado);
   }
 
-  const peticionPost=async()=>{
+  const peticionPut=async()=>{
     var f = new FormData();
-    f.append("nombre_tar", tareaSeleccionado.nombre_tar);
-    f.append("descripcion_tar", tareaSeleccionado.descripcion_tar);
-    f.append("METHOD", "POST");
-    await axios.post(baseUrl, f)
+    f.append("nombre_tar", editarTareaSeleccionado.nombre_tar);
+    f.append("descripcion_tar", editarTareaSeleccionado.descripcion_tar);
+    f.append("METHOD", "PUT");
+    await axios.post(baseUrl, f, {params: {id: editarTareaSeleccionado.id}})
     .then(response=>{
-      setData(data.concat(response.data));
+        var dataNueva=data;
+        dataNueva.map(tareas=>{
+            if(tareas.id===editarTareaSeleccionado.id){
+                editarTareaSeleccionado.nombre_tar=editarTareaSeleccionado.nombre_tar;
+                editarTareaSeleccionado.descripcion_tar=editarTareaSeleccionado.descripcion_tar;
+            }
+        });
+      setData(dataNueva);
     })
    }
+
+
     return(
         <div className="container-fluid">
         <div className="container pt-5">
@@ -50,6 +70,7 @@ function Crear(){
                           name="nombre_tar"
                           autoComplete="tarea"
                           onChange={handleChange}
+                          value={editarTareaSeleccionado && editarTareaSeleccionado.nombre_tar}
                           autoFocus
                         />
                       </div>
@@ -64,19 +85,21 @@ function Crear(){
                           name="descripcion_tar"
                           autoComplete="descripcion"
                           onChange={handleChange}
-                          autoFocus
+                          value={editarTareaSeleccionado && editarTareaSeleccionado.descripcion_tar}
                         />
                       </div>
                     </div>
-
+{/* <Link type="button" className="btn btn-success" to={'/crear'}>Agregar Empleado</Link> */}
                     <div className="d-grid gap-2">
-                      <button
-                        type="submit"
-                        className="btn btn-primary login"
-                        onClick={()=>peticionPost()}
+                      <Link
+                        type="button"
+                        className="btn btn-success"
+                        to={'/editar'}
+                        onClick={()=>peticionPut()}
                       >
+                        
                         Guardar
-                      </button>
+                      </Link>
                     </div>
 
       
@@ -90,4 +113,4 @@ function Crear(){
     );
 }
 
-export default Crear;
+export default Editar;

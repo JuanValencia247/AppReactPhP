@@ -19,6 +19,9 @@ function Nav() {
             <Link className="nav-item nav-link" to="/listar">
               Listar Tarea
             </Link>
+            {/* <Link className="nav-item nav-link" to="/editar">
+              Editar Tarea
+            </Link> */}
             <Link className="nav-item nav-link" to="/registro">
               Registrarse
             </Link>

@@ -40,7 +40,9 @@ function Header() {
                 Fugiat recusandae aliquam ipsum voluptatum, officiis eius
                 doloremque dignissimos reprehenderit tenetur, autem aperiam!
               </p>
-              <button className="crearBtn">Informacion</button>
+              <Link className="crearBtn" to={"/registro"}>
+                Informacion
+              </Link>
             </div>
 
             <div className="tar">
@@ -51,7 +53,9 @@ function Header() {
                 Fugiat recusandae aliquam ipsum voluptatum, officiis eius
                 doloremque dignissimos reprehenderit tenetur, autem aperiam!
               </p>
-              <button className="crearBtn">Informacion</button>
+              <Link className="crearBtn" to={"/registro"}>
+                Informacion
+              </Link>
             </div>
           </div>
         </div>

@@ -128,7 +128,7 @@ function Registro() {
                   <div className="container input-group mb-3"> </div>
 
                   <div className="d-grid gap-4">
-                    <button type="submit" className="btn btn-primary login" onClick={()=>peticionPost()}>
+                    <button type="submit" className="btn btn-primary " onClick={()=>peticionPost()}>
                       Registrarse
                     </button>
                   </div>

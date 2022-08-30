@@ -1,7 +1,14 @@
-import React from "react";
+import React, {useRef} from "react";
 import { Link } from "react-router-dom";
 
 function Login() {
+
+  const refUsuario = useRef(null);
+  // const refClave = useRef(null);
+
+  const handleLogin=()=>{
+    console.log(refUsuario.current.value);
+  }
   return (
     <>
       <div className="container-fluid">
@@ -39,12 +46,12 @@ function Login() {
                         />
                       </div>
                     </div>
-
+                   
                     <div className="d-grid gap-2">
                       <button
-    
                         type="submit"
-                        className="btn btn-primary login"
+                        className="btn btn-primary btn-block"
+                        onClick={handleLogin}
                       >
                         Iniciar Sesion
                       </button>
