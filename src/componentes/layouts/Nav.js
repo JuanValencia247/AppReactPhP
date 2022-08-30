@@ -13,12 +13,12 @@ function Nav() {
             <Link className="nav-item nav-link" to="/">
               Inicio
             </Link>
-            {/* <Link className="nav-item nav-link" to="/crear">
+            <Link className="nav-item nav-link" to="/crear">
               Crear Tarea
             </Link>
             <Link className="nav-item nav-link" to="/calificar">
               Calificar Tarea
-            </Link> */}
+            </Link>
             <Link className="nav-item nav-link" to="/registro">
               Registrarse
             </Link>

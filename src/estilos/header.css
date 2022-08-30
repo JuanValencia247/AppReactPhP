@@ -1,0 +1,141 @@
+
+*{
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: Times, serif;
+    margin: 0;
+}
+#inicio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 90vh;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    ), url("../imagenes/fondoInicio.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+#bienvenido{
+    font-family: 'Qwitcher Grypen', cursive;
+    font-size: 70px;
+    color: white;
+}
+.botonInicio{
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid rgb(0,51,102);
+    box-shadow: 2px 2px 10px rgb(213, 219, 226) ;
+    display: inline-block;
+    margin: 40px 0;
+  
+    color: white;
+    font-family: consolas;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 4px;
+}
+.botonInicio:hover{
+    background-color: #001933;
+    color: #968096;
+}
+
+#tareas{
+    background-color: rgb(233, 233, 233);
+    text-align: center;
+    color: white;
+}
+#tareas .contenedor{
+  padding: 100px 0px;  
+}
+#tareas h2{
+    margin-top: -5%;
+    color: black;
+    font-weight: bold;
+    font-size: 3.2em;
+}
+#tareas h3{
+    color: white;
+    font-size: 3.2em;
+}
+#tareas p{
+    display: none;
+    display: block;
+}
+#tareas .tar{
+    background-position: center center;
+    background-size: cover;
+    padding: 50px;
+    margin: 20px;
+    border-radius: 15px;
+}
+#tareas .misTareas{
+    display: flex;
+    justify-content: center;
+}
+.tar:first-child{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    ), url("../imagenes/fondoInicio.jpg");
+}
+.tar:nth-child(2){
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    ), url("../imagenes/fondoInicio.jpg");
+}
+.tar:nth-child(3){
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    ), url("../imagenes/fondoInicio.jpg");
+}
+.tar:nth-child(4){
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    ), url("../imagenes/fondoInicio.jpg");
+}
+
+/* Botones */
+
+.crearBtn{ 
+    background-color: white;
+     font-size: 1em;
+     font-weight: bold;
+     padding: 10px 20px;
+     border-radius: 10px;
+     border: 1px solid rgb(0,51,102);
+     box-shadow: 2px 2px 10px rgb(213, 219, 226) ;
+     display: inline-block;
+     margin: 10px 0;
+   
+     color: rgb(0,51,102);
+     font-family: consolas;
+     text-decoration: none;
+     text-transform: uppercase;
+     transition: 0.5s;
+     letter-spacing: 4px;
+  
+  }
+  .crearBtn:hover{
+    background-color: rgb(0,51,102);
+    color: #ccffcc;
+  }
