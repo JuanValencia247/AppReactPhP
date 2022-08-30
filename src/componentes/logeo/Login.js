@@ -11,38 +11,38 @@ function Login() {
               <div className="card">
                 <div className="card-header">Login</div>
                 <div className="card-body">
-                  <form method="POST" action="login.php">
+                  <form>
                     <div className="form-group">
-                      <label for="email">Email</label>
+                      <label htmlFor="email">Email</label>
                       <div className="input-group mb-3">
                         <input
-                          id="email"
+     
                           type="email"
                           className="form-control"
-                          name="email_usu"
-                          autocomplete="email"
-                          autofocus
+                          name="email_adm"
+                          autoComplete="email"
+                          autoFocus
                         />
                       </div>
                     </div>
 
                     <div className="form-group">
-                      <label for="password">Contraseña</label>
+                      <label htmlFor="password">Contraseña</label>
                       <div className="input-group mb-5">
                         <input
-                          id="formulario"
+          
                           type="password"
                           className="form-control"
-                          name="password_usu"
-                          autocomplete="password"
-                          autofocus
+                          name="password_adm"
+                          autoComplete="password"
+          
                         />
                       </div>
                     </div>
 
                     <div className="d-grid gap-2">
                       <button
-                        id="formulario"
+    
                         type="submit"
                         className="btn btn-primary login"
                       >

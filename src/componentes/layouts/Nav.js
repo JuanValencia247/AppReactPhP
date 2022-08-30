@@ -6,7 +6,7 @@ function Nav() {
     <nav className="navbar navbar-expand navbar-dark bg-dark">
       <div className="container">
         <Link className="navbar-brand font-weight-bold" to="/">
-          <span class="color">SISTEM</span>-TAR
+          <span className="color">SISTEM</span>-TAR
         </Link>
      
           <div className="nav navbar-nav">
@@ -16,8 +16,8 @@ function Nav() {
             <Link className="nav-item nav-link" to="/crear">
               Crear Tarea
             </Link>
-            <Link className="nav-item nav-link" to="/calificar">
-              Calificar Tarea
+            <Link className="nav-item nav-link" to="/listar">
+              Listar Tarea
             </Link>
             <Link className="nav-item nav-link" to="/registro">
               Registrarse
